@@ -1,6 +1,6 @@
 #tinytic
 ##API
-`toc` : returns time difference since toc was last called
+`toc`: returns time difference since toc was last called
 ##Example
 ```javascript
 var tinytic = require('tinytic');

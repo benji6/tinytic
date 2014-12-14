@@ -20,7 +20,8 @@
     "timediff",
     "time",
     "difference",
-    "animation"
+    "animation",
+    "requestAnimationFrame"
   ],
   "author": "Ben Hall (http://benji6.uk)",
   "license": "GNU GPL v3",
