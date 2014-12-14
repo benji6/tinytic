@@ -6,13 +6,13 @@
 var tinytic = require('tinytic');
  
 function render (dT) {
-// ...
+  // ...
 }
  
 function loop() {
-requestAnimationFrame(loop);
-var dT = tinytic.toc();
-render(dT);
+  requestAnimationFrame(loop);
+  var dT = tinytic.toc();
+  render(dT);
 }
  
 loop(); 
