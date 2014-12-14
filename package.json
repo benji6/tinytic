@@ -4,7 +4,8 @@
   "description": "module for getting time differences, especially useful for animation",
   "main": "tinytic.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/uglifyjs tinytic.js > tinytic.min.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/benji6/tinytic/issues"
   },
-  "homepage": "https://github.com/benji6/tinytic"
+  "homepage": "https://github.com/benji6/tinytic",
+  "devDependencies": {
+    "uglify-js": "^2.4.16"
+  }
 }
