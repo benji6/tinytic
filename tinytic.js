@@ -5,7 +5,7 @@ var toc = function(maxDT) {
 	then = now;
 	now = new Date().getTime();
 	var dT = now - then;
-	if (maxDT && maxDT < dT) {
+	if (maxDT !== undefined && maxDT < dT) {
 		return maxDT;
 	}
 	return dT;
