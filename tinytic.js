@@ -1,7 +1,7 @@
 var then = new Date().getTime();
 var now = new Date().getTime();
 
-var toc = function(maxDT) {
+module.exports.toc = function(maxDT) {
 	then = now;
 	now = new Date().getTime();
 	var dT = now - then;
@@ -10,5 +10,3 @@ var toc = function(maxDT) {
 	}
 	return dT;
 };
-
-exports.toc = toc;
