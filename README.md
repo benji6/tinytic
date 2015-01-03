@@ -1,6 +1,11 @@
 #tinytic
+##Description
+This is a tiny module for getting time differences which is simple and easy to use.
+It is especially useful for animation.
 ##API
-`toc`: returns the time difference in milliseconds since toc was last called. Takes an optional argument which specifies the maximum time difference that will be returned.
+`toc`: returns the time difference in milliseconds since toc was last called. Takes an optional argument which specifies the maximum time difference that will be returned. (This is a good idea when using requestAnimationFrame because the browser may stop requesting frames (e.g. if the user has switched tabs) and produce an excessive time difference).
+`total`: returns the total time elapsed either since tinytic was first loaded or since `reset` was last called.
+`reset`: sets tinytic to its initialised state resetting all timers.
 ##Example
 ```javascript
 var tinytic = require('tinytic');
@@ -8,20 +13,20 @@ var tinytic = require('tinytic');
 //optionally set maximum time difference in milliseconds
 var maxDT = 500;
 
-function render (dT) {
+function render (dT, totalTimeElapsed) {
   // ...
 }
- 
+
 function loop() {
   requestAnimationFrame(loop);
   var dT = tinytic.toc(maxDT);
   //if no maximum time difference is required then use as below:
   //var dT = tinytic.toc();
-  render(dT);
+
+  //if total time elapsed is required use as below:
+  var totalTimeElapsed = tinytic.total();
+  render(dT, totalTimeElapsed);
 }
- 
-loop(); 
+
+loop();
 ```
-##Description
-This module is especially useful for animation.
-Setting a maximum time difference can be a good idea when using requestAnimationFrame because if the browser stops requesting frames for a period (e.g. if the user has switched tabs) the time difference returned from tinytic.toc() could become very large and cause unforeseen consequences.
