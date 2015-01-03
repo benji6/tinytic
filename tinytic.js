@@ -1,6 +1,6 @@
 var firstTime = new Date().getTime();
 var then = firstTime;
-var now = new Date().getTime();
+var now = then;
 
 module.exports.toc = function(maxDT) {
 	then = now;
@@ -17,4 +17,9 @@ module.exports.total = function(maxDT) {
 		return maxDT;
 	}
 	return dT;
+};
+module.exports.reset = function() {
+	firstTime = new Date().getTime();
+	then = firstTime;
+	now = then;
 };
