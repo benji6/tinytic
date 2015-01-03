@@ -12,7 +12,7 @@ module.exports.toc = function(maxDT) {
 	return dT;
 };
 module.exports.total = function(maxDT) {
-	var dT = now - firstTime;
+	var dT = new Date().getTime() - firstTime;
 	if (maxDT < dT) {
 		return maxDT;
 	}
