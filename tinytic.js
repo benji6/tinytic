@@ -1,10 +1,12 @@
-var firstTime = new Date().getTime();
+var getNow = Date.now || function() {return new Date().getTime();};
+
+var firstTime = getNow();
 var then = firstTime;
 var now = then;
 
 module.exports.toc = function(maxDT) {
 	then = now;
-	now = new Date().getTime();
+	now = getNow();
 	var dT = now - then;
 	if (maxDT < dT) {
 		return maxDT;
@@ -12,14 +14,14 @@ module.exports.toc = function(maxDT) {
 	return dT;
 };
 module.exports.total = function(maxDT) {
-	var dT = new Date().getTime() - firstTime;
+	var dT = getNow() - firstTime;
 	if (maxDT < dT) {
 		return maxDT;
 	}
 	return dT;
 };
 module.exports.reset = function() {
-	firstTime = new Date().getTime();
+	firstTime = getNow();
 	then = firstTime;
 	now = then;
 };
