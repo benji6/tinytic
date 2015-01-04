@@ -1,8 +1,8 @@
 var getNow = Date.now || function() {return new Date().getTime();};
 
-var firstTime = getNow();
-var then = firstTime;
-var now = then;
+var time0 = getNow(),
+	then = time0,
+	now = then;
 
 module.exports.toc = function(maxDT) {
 	then = now;
@@ -14,14 +14,12 @@ module.exports.toc = function(maxDT) {
 	return dT;
 };
 module.exports.total = function(maxDT) {
-	var dT = getNow() - firstTime;
+	var dT = getNow() - time0;
 	if (maxDT < dT) {
 		return maxDT;
 	}
 	return dT;
 };
 module.exports.reset = function() {
-	firstTime = getNow();
-	then = firstTime;
-	now = then;
+	time0 = then = now = getNow();
 };
