@@ -1,9 +1,9 @@
-#tinytic
-##Description
+# tinytic
+## Description
 Tiny and easy to use module for getting time differences, especially useful for animation.
 
 Either install via npm or include minified file in your project to attach tinytic to the window.
-##API
+## API
 `toc`: returns the time difference in milliseconds since toc was last called. Takes an optional argument which specifies the maximum time difference that will be returned. This is a good idea when using requestAnimationFrame because the browser may stop requesting frames (e.g. if the user has switched tabs) and produce an excessive time difference.
 
 `total`: returns the total time elapsed either since tinytic was first loaded or since `reset` was last called.
