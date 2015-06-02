@@ -1,6 +1,6 @@
 {
   "name": "tinytic",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "module for getting time differences, especially useful for animation",
   "main": "tinytic.js",
   "scripts": {
