@@ -52,10 +52,9 @@ function runSpec (dT) {
     });
 
     var idx = 0;
-    var i;
-    for (i = 0; i < totalIterations; i++) {
+    for (var i = 0; i < totalIterations; i++) {
       it("returns total time elapsed to precision -2", function (done) {
-        expect(tinytic.total()).toBeCloseTo(dT * idx++, -2);
+        expect(tinytic.total()).toBeCloseTo(dT * ++idx, -2);
         done();
       });
     }
