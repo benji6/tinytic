@@ -1,5 +1,7 @@
 var tinytic = (function() {
-	var getNow = Date.now || function() {return new Date().getTime();};
+	var getNow = performance.now && performance.now.bind(performance) ||
+		Date.now ||
+		function() {return new Date().getTime();};
 
 	var t0 = getNow(),
 		then = t0,
