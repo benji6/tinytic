@@ -1,5 +1,5 @@
 var tinytic = (function() {
-	var getNow = performance.now && performance.now.bind(performance) ||
+	var getNow = typeof performance === "object" && typeof performance.now === "function" && performance.now.bind(performance) ||
 		Date.now ||
 		function() {return new Date().getTime();};
 
