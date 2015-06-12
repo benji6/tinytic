@@ -1,4 +1,4 @@
-var tinytic = require('./tinytic');
+var tinytic = require('../tinytic');
 
 console.log(tinytic);
 
