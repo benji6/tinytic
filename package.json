@@ -1,6 +1,6 @@
 {
   "name": "tinytic",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Tiny and easy to use module for getting time differences, especially useful for animation",
   "main": "tinytic.js",
   "repository": {
